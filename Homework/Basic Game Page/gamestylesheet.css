@@ -1,0 +1,17 @@
+img{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+body{
+    background-color: paleturquoise;
+}
+h1{
+    color: blue
+}
+h2{
+    color:blueviolet
+}
+h3{
+    color:brown
+}
