@@ -5,22 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dig Dug</title>
 
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
         <style>
-        h1 { 
-            color:red;
-            font-family: sans-serif;
-            border-bottom: 1px solid blue;
+            @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended&display=swap');
+
+            h1 { 
+                color:red;
+                font-family: sans-serif;
+                border-bottom: 1px solid blue;
+                text-decoration: underline;
+                }
+            h2{
+                color:blue;
+                margin-left: 50px;
             }
-        blockquote { 
-            background-color: lightgray;
-            padding: 1rem;
+            blockquote { 
+                background-color: lightgray;
+                padding: 1rem;
+                }
+            p{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                margin-left: 100px;
             }
-    </style>
+            img.side {
+                float:right; margin: 0 12px;
+            }
+        </style>
     </head>
 
 
     <body>
-        <img src="images/dig-dug.png" style="background-color:lightblue;" alt="Logo Image">
+       <img src="images/dig-dug.svg" alt="Teal Logo">
         
         <main>
             <header>
@@ -61,15 +78,16 @@
                 <li>Visual: Fixed</li>
                 <li>Gameplay: Arcade</li>
             </ul>
+
+             <img src="images/dig-dug.png" style="background-color:lightblue;" alt="Logo Image">
         </main>
 
 
         <h3>Quote</h3>
-
 	        This definitely goes under the heading of 
-            <blockquote>
+            <p>
                 "Games That Were Made While a Programmer Was on Drugs," or at least had a good imagination. And maybe they were into horror movies too.
-            </blockquote>
+            </p>
 		    -- https://www.mobygames.com/mobyrank/source/sourceId,540/
 
 
@@ -79,7 +97,9 @@
             https://www.mobygames.com/game/arcade/dig-dug
         </footer>
 
-        <img src="images/dig-dug.jpg" alt="digdug 2 electric boogaloo <3">
-        <img src="images/better_fygar_inflate.png" alt="fygar go brrr">
-        </body>
+        <div class="side">
+            <img src="images/dig-dug.jpg" alt="digdug 2 electric boogaloo <3" class="side">
+            <img src="images/better_fygar_inflate.png" alt="fygar go brrr" class="side">
+        </div>
+    </body>
 </html>
