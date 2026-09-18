@@ -4,28 +4,26 @@
         <meta charset="utf-8">
         <title>DigDug Revamped</title>
 
-        <style>
-            h1 { 
-            color:red;
-            font-family: sans-serif;
-            border-bottom: 1px solid blue;
-            }
-        blockquote { 
-            background-color: lightgray;
-            padding: 1rem;
-            }
-        </style>
+        <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
     </head>
 
     <body>
-        <main>
-            <header>
-                <h1>
-                    Dig Dug
-                </h1>
-            </header>
+        <header>
+            <img src="images/dig-dug.png" alt="The Dig Dug logo" height=200 width="600">
 
-            <img src="dig-dug-burnt.png" alt="Dig Dug Gameplay Image">
+            <h1>
+                <b>Dig Dug</b>
+            </h1>
+        </header>
+    
+        <main>
+            <img class="side" src="images/dig-dug-burnt.png" alt="Dig Dug Gameplay Image">
         
             <header>
                 <h2>
@@ -34,11 +32,11 @@
 
                 <hr>
 
-                <p>
-                    Published by: Atari, Inc.
-                    Developed by: Namco Limited
-                    Released: Apr, 1982
-                </p>
+                <ul class="publishing_info_list">
+                    <li><b>Published by:</b> Atari, Inc.</li>
+                    <li><b>Developed by:</b> Namco Limited</li>
+                    <li><b>Released:</b> Apr, 1982</li>
+                </ul>
             </header>
 
             <header>
@@ -55,21 +53,25 @@
 
 
             <header>
+                <img class="inflate" src="images/fygar_inflate.webp" alt="The main protagonists inflating an antagonist enemy">
+
                 <h2>
                     Game Categories
                 </h2>
 
                 <hr>
 
-                <p>
-                    Genre: Action
-                    Perspective: Side view
-                    Visual: Fixed
-                    Gameplay: Arcade
-                </p>
-            <header>
+                <ul>
+                    <li><b>Genre:</b> Action</li>
+                    <li><b>Perspective:</b> Side view</li>
+                    <li><b>Visual:</b> Fixed</li>
+                    <li><b>Gameplay:</b> Arcade</li>
+                </ul>
+            </header>
 
             <header>
+                <img src="images/dig-dug.svg" alt="Another Dig Dug logo">
+                
                 <h2>
                     Quote
                 </h2>
@@ -77,14 +79,18 @@
                 <hr>
 
                 <blockquote>
-	                This definitely goes under the heading of "Games That Were Made While a Programmer Was on Drugs," or at least had a good imagination. And maybe they were into horror movies too.
+                    <p>
+	                    This definitely goes under the heading of "Games That Were Made While a Programmer Was on Drugs," or at least had a good imagination. And maybe they were into horror movies too.
+                    </p>
                 </blockquote>
-                -- https://www.mobygames.com/mobyrank/source/sourceId,540/
+                <p>
+                    -- https://www.mobygames.com/mobyrank/source/sourceId,540/
+                </p>
             </header>
 
             <footer>
-                <h2>
-                    Source
+                <h2 id="Source">
+                    <i>Source</i>
                 </h2>
 
                 <hr>
@@ -93,6 +99,19 @@
                     https://www.mobygames.com/game/arcade/dig-dug
                 </p>
             </footer>
+
+            <hr>
+
+            <header>
+                <h2>
+                    Additional Resources
+                </h2>
+
+                <ul>
+                    <li><a href="https://www.mobygames.com/game/139/dig-dug/" target="_blank"><i>Dig Dug mobygames entry</i></a></li>
+                    <li><a href="big/pic1.html"><i>Another Gameplay Image</i></a></li>
+                </ul>
+            </header>
         </main>
     </body>
 </html>

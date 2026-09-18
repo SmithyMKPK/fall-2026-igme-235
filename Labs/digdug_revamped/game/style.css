@@ -1,0 +1,49 @@
+body{
+    background-color: #526B73;
+    font-family: Arial, sans-serif;
+}
+h1{ 
+    color:#FF6B4A;
+    font-family: "Commissioner";
+    border-bottom: 1px solid blue;
+}
+h2{
+    font-family: "Commissioner";
+    font-style: italic;
+    color:#90DDF0;
+    margin-left: 50px;
+}
+h3{
+    font-family: "Commissioner";
+}
+blockquote { 
+    background-color: #526B73;
+    padding: 1rem;
+}
+p{
+    margin-left: 100px;
+}
+a{
+    color: #176B87;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+img.side{
+    float:right;
+    margin: 0 12px;
+}
+img.inflate{
+    display: block;
+    margin: 0 auto;
+}
+main{
+    background-color: #a3b1b1;
+    width: 80vw;
+    margin: 0 auto;
+}
+ul{
+    margin-left: 100px;
+}
