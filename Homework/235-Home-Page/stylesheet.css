@@ -1,0 +1,70 @@
+body{
+    background-color: #FFC1D8;
+    color: #20252b
+}
+
+main{
+    background-color: #57F7F2;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+footer.extra-notes{
+    text-align: center;
+    background-color: #62DEFF;
+    clear: both;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+img#me{
+    float:right;
+    margin: 0 12px;
+    height: auto;
+    width: 200px;
+}
+
+h1, h2{
+    color: #005F73;
+    font-family: "Comic Relief";
+}
+
+li.completed-ul-links a:link {
+    color: #008FB3;
+}
+
+li.completed-ul-links a:visited {
+    color: #6A3D9A;
+}
+
+li.completed-ul-links a:hover {
+    color: #005F73;
+}
+
+li.completed-ul-links a:active {
+    color: #D62828;
+}
+
+li.completed-ul-links a:focus {
+    color: #005F73;
+}
+
+li.incomplete-ul-links a:link {
+    color: #B8860B;
+}
+
+li.incomplete-ul-links a:visited {
+    color: #493200;
+}
+
+li.incomplete-ul-links a:hover {
+    color: #D97706;
+}
+
+li.incomplete-ul-links a:active {
+    color: #D62828;
+}
+
+li.incomplete-ul-links a:focus {
+    color: #8B5E00;
+}
