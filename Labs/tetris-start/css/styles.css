@@ -1,1 +1,21 @@
-/* Do everything in this file */
+main{
+    border: 1px solid black;
+}
+
+h2, h3{
+    border-bottom: 2px solid red;
+    clear: both;
+}
+
+figure{
+    float: right;
+    width: 40%;
+
+    img{
+        width: 100%;
+    }
+}
+
+section#tetlist{
+    float: left;
+}
