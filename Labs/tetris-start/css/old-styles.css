@@ -1,0 +1,28 @@
+h2{
+    border-bottom: 2px solid red;
+    clear: both;
+}
+
+figure{
+    float: right;
+    width: 40%;
+
+    img{
+        width: 100%;
+    }
+}
+
+section#tetlist{
+    float: left;
+    width: 100rem;
+    border: 1px solid green;
+}
+
+footer{
+    color: gray;
+    clear: both;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
