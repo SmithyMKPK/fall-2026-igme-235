@@ -40,4 +40,48 @@ nav, aside {
 /*****************
 Grid Formatting  
 *****************/
+#wrapper{
+    display: grid;
+    grid-template-rows: 1fr 2fr 10fr 2fr 1fr;
+    grid-template-areas: 
+        "header" 
+        "navbar" 
+        "content" 
+        "sidebar" 
+        "footer";
+    width: 100vh;
+}
 
+@media screen and (min-width: 760px){
+    #wrapper{
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-columns: 20%, 1fr, 20%;
+        grid-template-areas: 
+            "header header header" 
+            "navbar content sidebar" 
+            "footer footer footer";
+        
+        max-width: 1000px;
+        margin: 0px auto;
+    }
+}
+
+header{
+    grid-area: header;
+}
+
+article{
+    grid-area: content;
+}
+
+nav{
+    grid-area: navbar;
+}
+
+aside{
+    grid-area: sidebar;
+}
+
+footer{
+    grid-area: footer;
+}
