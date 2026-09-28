@@ -1,0 +1,72 @@
+/* It starts completely empty. I wish you luck. */
+body{
+    margin:1rem;
+
+    div#wrapper{
+        grid-template-areas: 
+        "logo"
+        "menu"
+        "intro"
+        "playground"
+        "footer";
+
+        h1.game {
+            grid-area: logo; 
+            width: 500px;
+            height: 345px;
+            background: url(../images/tetris-logo.png) no-repeat;
+            text-indent: -9999px;
+        }
+        ul.menu {
+            grid-area: menu; 
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        #introduction {
+            grid-area: intro; 
+        }
+        #tetgrid {
+            grid-area: playground; 
+        }
+        footer {
+            grid-area: footer; 
+        }
+        section#introduction{
+            margin:2rem;
+        }
+        .menu a{
+            display: block;
+            background: gray;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu li{
+            width: 25%;
+        }
+        .menu a:hover{
+            background: red;
+            color: yellow;
+        }
+    }
+}
+
+@media screen and (min-width: 850px){
+    body{
+        div#wrapper{
+            grid-template-areas: 
+                "logo intro"
+                "menu menu"
+                "playground playground"
+                "footer footer";
+            grid-template-rows:
+                345px
+                auto;
+            grid-template-columns:
+                500px 1fr;
+        }
+    }
+}
+
