@@ -1,0 +1,71 @@
+/* Link states */
+a:link {
+    color:blue;
+    text-decoration: none;
+ } 
+a:visited{
+    color:#6A89A7
+}
+a:hover{
+    color:darkblue;
+}
+a:focus{ 
+    outline: 2px solid #ffa500; 
+}
+a:active{
+    color:red;
+}
+
+/* Header styling */
+header {
+    background-color:burlywood;
+    border: 2px solid gray;
+    padding: 20px;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+}
+
+/* Footer styling */
+footer {
+    background-color: darkgray;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main content */
+main {
+    padding:20px;
+}
+
+/* Feel free to add any additional CSS rules that you need */
+p#welcome-message{
+    font-style: italic;
+    font-size: 1.25rem;
+}
+
+/* Game list styling using flexbox or grid */
+.game-list {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap: 1rem;
+}
+  
+.game {
+    background-color: lightgray;
+    padding: 1rem;
+    border-radius: 4px;
+}
+  
+.game h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    color: chocolate;
+}
+
+.game p{
+    text-align: center;
+}
+  
