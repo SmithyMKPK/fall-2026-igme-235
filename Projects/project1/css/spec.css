@@ -1,0 +1,25 @@
+header {
+    background-color: #bbb;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    font-size: 14pt;
+    margin: left;
+    padding: 10px;
+    color: black;
+}
+
+a#name{
+    margin-left: auto;
+}
+
+main {
+    padding: 10px;
+}
