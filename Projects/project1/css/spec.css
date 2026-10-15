@@ -74,16 +74,16 @@ section.active-projects figure{
     text-align: center;
 }
 
-a:link {
+a:not(#name):link {
     color:blue;
     text-decoration: none;
  } 
-a:visited{
+a:not(#name):visited{
     color:#45665c
 }
-a:hover{
+a:not(#name):hover{
     color:#47d6ab
 }
-a:not(name)active{
+a:not(#name):active{
     color:#00ffb3
 }
