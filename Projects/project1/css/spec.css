@@ -1,25 +1,89 @@
-header {
-    background-color: #bbb;
+body {
+    background-color: #55917f;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+    background-color: #6bab90;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
 }
 
 nav {
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    text-decoration: none;
+    background-color: #6bab90;
+    justify-content: space-evenly;
     font-size: 14pt;
-    margin: left;
     padding: 10px;
-    color: black;
 }
 
-a#name{
-    margin-left: auto;
+a#name {
+    font-size: 18pt;
+    margin-left: 25vw;
+    color: white;
 }
 
-main {
-    padding: 10px;
+nav a {
+    background-color: transparent;
+}
+
+section.overview{
+    grid-column: 1;
+}
+
+section.change-logs{
+    grid-column: 1;
+}
+
+section.overview p#overview-text{
+    color:white;
+    font-size: 20px;
+    padding-left: 10vw;
+}
+
+section.change-logs ul{
+    color: white;
+    font-size:20px;
+    padding-left:10vw;
+}
+
+section.active-projects {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+section.active-projects img {
+    width: 350px;
+}
+
+section.active-projects figure{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a:not(#name):link {
+    color:blue;
+    text-decoration: none;
+ } 
+a:not(#name):visited{
+    color:#45665c
+}
+a:not(#name):hover{
+    color:#47d6ab
+}
+a:not(#name):active{
+    color:#00ffb3
 }
