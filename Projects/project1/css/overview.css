@@ -1,0 +1,88 @@
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    gap: clamp(20px, 3vw, 50px);
+    padding: clamp(20px, 4vw, 60px);
+    flex: 1;
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section.overview{
+    grid-column: 1;
+}
+
+section.change-logs{
+    grid-column: 1;
+}
+
+section.overview p#overview-text{
+    color:white;
+    font-size: 20px;
+    padding-left: 10vw;
+}
+
+section.change-logs ul{
+    color: white;
+    font-size:20px;
+    padding-left:10vw;
+}
+
+section.active-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    min-width: 0;
+}
+
+section.active-projects a {
+    width: 100%;
+    display: block;
+    max-width: 600px;
+}
+
+section.active-projects a img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+section.active-projects figure{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+section.active-projects p{
+    color: white;
+    font-size: 18px;
+}
+
+section.overview p#overview-text,
+section.change-logs ul {
+    color: white;
+    font-size: clamp(16px, 1.2vw, 20px);
+    padding-left: clamp(10px, 2vw, 30px);
+}
+
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    section.overview,
+    section.change-logs,
+    section.active-projects {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    section.active-projects a {
+        max-width: 200px;
+    }
+}
