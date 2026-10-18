@@ -3,9 +3,6 @@ main {
     grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
     gap: clamp(20px, 3vw, 50px);
     padding: clamp(20px, 4vw, 60px);
-    flex: 1;
-    max-width: 1600px;
-    width: 100%;
     margin: 0 auto;
 }
 

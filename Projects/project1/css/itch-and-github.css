@@ -1,0 +1,16 @@
+main{
+    padding: clamp(20px, 4vw, 60px);
+}
+
+section#content{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    text-align: center;
+}
+
+section#content img{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}

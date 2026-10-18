@@ -78,24 +78,24 @@ a#name {
     flex-shrink: 0;
 }
 
-a:not(#name):link {
+nav a:not(#name):link {
     color: white;
     text-decoration: none;
 }
 
-a:not(#name):visited {
+nav a:not(#name):visited {
     color: #45665c;
 }
 
-a:not(#name):hover {
+nav a:not(#name):hover {
     color: #47d6ab;
 }
 
-a:not(#name):active {
+nav a:not(#name):active {
     color: #00ffb3;
 }
 
-a:not(#name)#active {
+nav a:not(#name)#active {
     text-decoration: underline;
     text-underline-offset: 5px;
 }

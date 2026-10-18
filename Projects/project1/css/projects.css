@@ -7,6 +7,10 @@ main {
     box-sizing: border-box;
 }
 
+p, li{
+    color: white;
+}
+
 div.project-entry{
     max-width: 100%;
     min-width: 0;
@@ -16,7 +20,7 @@ div.project-entry img{
     max-width: 100%;
 }
 
-#in-a-nutshell-info{
+.in-a-nutshell-info{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px 40px;
@@ -34,7 +38,7 @@ div.project-entry img{
     margin-bottom: 6px;
 }
 
-summary img, summary strong, summary p {
+summary img, summary strong {
     margin: 0 auto;
     text-align: center;
     display: block;
