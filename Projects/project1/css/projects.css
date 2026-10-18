@@ -14,6 +14,7 @@ div.project-entry{
 
 div.project-entry img{
     max-width: 100%;
+    min-width: 100%;
 }
 
 #in-a-nutshell-info{
