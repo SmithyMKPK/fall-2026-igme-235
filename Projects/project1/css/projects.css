@@ -1,0 +1,49 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 40px);
+    padding: clamp(20px, 4vw, 60px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div.project-entry{
+    max-width: 100%;
+    min-width: 0;
+}
+
+div.project-entry img{
+    max-width: 100%;
+}
+
+#in-a-nutshell-info{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 40px;
+}
+
+#in-a-nutshell-info h3,
+#in-a-nutshell-info p {
+    text-align: center;
+    margin: 0;
+}
+
+#in-a-nutshell-info h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+#gameplay-images{
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    #gameplay-images{
+        flex-direction: row;
+    }
+}
