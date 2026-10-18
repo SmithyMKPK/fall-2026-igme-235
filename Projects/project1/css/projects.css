@@ -14,7 +14,6 @@ div.project-entry{
 
 div.project-entry img{
     max-width: 100%;
-    min-width: 100%;
 }
 
 #in-a-nutshell-info{
@@ -23,28 +22,46 @@ div.project-entry img{
     gap: 24px 40px;
 }
 
-#in-a-nutshell-info h3,
-#in-a-nutshell-info p {
+.in-a-nutshell-info h3,
+.in-a-nutshell-info p {
     text-align: center;
     margin: 0;
 }
 
-#in-a-nutshell-info h3 {
+.in-a-nutshell-info h3 {
     font-size: 0.85rem;
     text-transform: uppercase;
     margin-bottom: 6px;
 }
 
-#gameplay-images{
+summary img, summary strong, summary p {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+.gameplay-images {
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 1rem;
+    max-width: 100%;
+}
+
+.gameplay-images img {
+    flex: 0 0 auto;
+    width: 350px;
+    max-width: 85%;
+    height: auto;
+    object-fit: contain;
 }
 
 @media (max-width: 600px) {
     main {
         grid-template-columns: 1fr;
-    }
-
-    #gameplay-images{
-        flex-direction: row;
     }
 }

@@ -25,12 +25,12 @@
         <div class="project-entry">
             <details>
                 <summary>
-                    <img id="mw" src="media/MW-thumbnail.png" alt="MW thumbnail">
+                    <img src="media/MW-thumbnail.png" alt="MW thumbnail">
                     <strong>Murder Week (Project MW)</strong>
-                    <p>Seven nights this town will never forget.</p>
+                    <h3>Seven nights this town will never forget.</h3>
                 </summary>
 
-                <section id="in-a-nutshell-info">
+                <section class="in-a-nutshell-info">
                     <div>
                         <h3>
                             Role(s)
@@ -70,7 +70,7 @@
 
                 <hr>
 
-                <section id="detailed-info">
+                <section class="detailed-info">
                     <h2>
                         Overview
                     </h2>
@@ -82,33 +82,30 @@
                         My Contributions
                     </h2>
                     <ul>
-                        <li>Currently writing character bios and lore regarding their motivations to become serial killers</li>
-                        <li>Leading 4 active programmers across several paradigms, involving UI/UX, gameplay, and graphics programming</li>
+                        <li>Currently leading four active programmers working across gameplay, UI/UX, and graphics programming, coordinating implementation across multiple areas</li>
+                        <li>Currently writing character biographies, backstories, and motivations to support the game's narrative and identities of the seven main killers.</li>
                     </ul>
 
                     <h2>
                         Technical Highlights
                     </h2>
                     <ul>
-                        <li>An inheritance-driven character system, allowing polymorphism and abstraction to exist in character interactions with the world</li>
-                        <li>A NPC life cycle currently involving being fed information when spawned while having their reference stay intact for future pooling.</li>
-                        <li>A reactive health bar attached to most characters' inherited scenes that show how much damage was taken given a particular time frame that appears only when the character is damaged
-                        </li>
+                        <li>Developed an inheritance-driven character system using abstraction and polymorphism to support shared behavior across character types while allowing special interactions with particular characters</li>
+                        <li>Cerated an NPC lifestyle that initializes characters with information when they spawning while preserving their object reference for future reuse using pooling techniques</li>
+                        <li>Implmented health bars that appear in response to damage while also showing how much damage they were actually dealth, providing positive reinforcement to the plyaer without hindering the screen of these UI elements.
                     </ul>
 
                     <h2>
-                        Project Outcome(s)
+                        Current Development Status
                     </h2>
-                    <ul>
-                        <li>
-                            Promising progress involving character interaction, life cycles, and behavior in the current early stage of development
-                        </li>
-                    </ul>
+                    <p>
+                        Progress on the game is currently moving swiftly. There are issues involving art direction and gameplay that is still needed to be solidified. However, once that is done, it will lead to a much smoother development cycle for future sprints. Additionally, refactors are also beginning to be handed out to several programmers for particular features to suit the needs of the game in a better manner.
+                    </p>
 
                     <h2>
                         Gameplay Clips / Images
                     </h2>
-                    <div id="gameplay-images">
+                    <div class="gameplay-images">
                         <img src="media/healthbar-test.gif" alt="A reference to the reactive healthbars in action">
                         <img src="media/character-pooling-test.gif" alt="A test of the current character pooling system">
                     </div>
@@ -119,41 +116,52 @@
         <div class="project-entry">
             <details>
                 <summary>
-                    <img id="mw" src="media/drd-cover art.png" alt="Die RoboNinja DIE Thumbnail">
+                    <img src="media/drd-start-screen.png" alt="Die RoboNinja DIE Thumbnail">
                     <strong>DIE ROBONINJA DIE</strong>
-                    <p>Hide in trash cans and slash people open!</p>
+                    <h3>Hide in trash cans and slash people open!</h3>
                 </summary>
 
-                <section id="in-a-nutshell-info">
-                    <h3>
-                        Role(s)
-                    </h3>
-                    <p>
-                        Gameplay Programmer
-                    </p>
-                    <h3>
-                        Tools Used
-                    </h3>
-                    <p>
-                        Unity, C#
-                    </p>
-                    <h3>
-                        Team Size
-                    </h3>
-                    <p>
-                        3 Developers
-                    </p>
-                    <h3>
-                        Production Period
-                    </h3>
-                    <p>
-                        July 11th, 2026 - July 19th, 2026
-                    </p>
+                <section class="in-a-nutshell-info">
+                    <div>
+                        <h3>
+                            Role(s)
+                        </h3>
+                        <p>
+                            Gameplay Programmer
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>
+                            Tools Used
+                        </h3>
+                        <p>
+                            Unity, C#
+                        </p>
+                    </div>
+                
+                    <div>
+                        <h3>
+                            Team Size
+                        </h3>
+                        <p>
+                            3 Developers
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>
+                            Production Period
+                        </h3>
+                        <p>
+                            July 11th, 2026 - July 19th, 2026
+                        </p>
+                    </div>
                 </section>
 
                 <hr>
 
-                <section id="detailed-info">
+                <section class="detailed-info">
                     <h2>
                         Overview
                     </h2>
@@ -166,13 +174,13 @@
                     </h2>
                     <ul>
                         <li>
-                            Programmed behaviors of the enemies, ranging from movement to attacking to death
+                            Programmed enemy behaviors across movement, pursuit, combat, and death states
                         </li>
                         <li>
-                            Shared ideas on design of the level to ensure fairness for the player
+                            Developed navigation functionality with enemies to help locate the player across connected platforms
                         </li>
                         <li>
-                            Programmed key navigation methods so each enemy the player could be accounted for
+                            Contributed level design and balancing ideas to support fair encounters and ensure that enemy navigation worked with the intended layout
                         <li>
                     </ul>
 
@@ -181,17 +189,17 @@
                     </h2>
                     <ul>
                         <li>
-                            Implemented a custom enemy pathfinding system in using a depth-first search algorithm over a connected platform graph, finding reachable routes to the players platform
+                            Implemented a custom enemy pathfinding system in using depth-first search grahs to identify routes toward the player's platform that gets refreshed in intervals
                         </li>
                         <li>
                             Developed enemy behaviors for pursuit, wandering, and hiding-spot investigation, integrating navigation with combat and environmental interactions.
                         </li>
                         <li>
-                            Created a platform-detection system, allowing for level designers to easily place two types of Prefabs (walking and jumping-dropping platforms) to move around
+                            Created a platform-detection system, allowing for level designers to easily place two types of reusable Unity Prefabs (walking and jumping-dropping platforms) to move around
                         </li>
-                        <ul>
-                            Created a character pooling system, allowing enemies who have been eliminated to essentially respawn with the same default behavior
-                        </ul>
+                        <li>
+                            Implemented a reusable pooling system allowing defeated enemies to be reused and reset instead of requiring new instances of enemies to always spawn in
+                        </li>
                     </ul>
                     
 
@@ -207,9 +215,11 @@
                     <h2>
                         Gameplay Clips / Image
                     </h2>
-                    <img src="src/placeholder-tv-image.png" alt="something something first image">
-                    <img src="src/placeholder-tv-image.png" alt="something something first image">
-                    <img src="src/placeholder-tv-image.png" alt="something something first image">
+                    <div class="gameplay-images">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                    </div>
                 </section>
             </details>
         </div>
@@ -217,77 +227,190 @@
         <div class="project-entry">
             <details>
                 <summary>
-                    <img id="mw" src="src/placeholder-tv-image.png" alt="MW thumbnail">
-                    <strong>Murder Week (Project MW)</strong>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, quo?</p>
+                    <img src="media/PCI-start-screen.png" alt="Post Casket Investigaton Start Screen">
+                    <strong>Post Casket Investigation</strong>
+                    <h3>Investigate where things are, even past death.</h3>
                 </summary>
 
-                <section id="in-a-nutshell-info">
-                    <h3>
-                        Role(s)
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                    <h3>
-                        Tools Used
-                    </h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, dolores!
-                    </p>
-                    <h3>
-                        Team Size
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                    <h3>
-                        Production Period
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet.
-                    </p>
+                <section class="in-a-nutshell-info">
+                    <div>
+                        <h3>
+                            Role(s)
+                        </h3>
+                        <p>
+                            Level Designer, UI/UX Designer & Programmer, Sound Designer
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Tools Used
+                        </h3>
+                        <p>
+                            Godot - GDScript
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Team Size
+                        </h3>
+                        <p>
+                            2 Developers
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Production Period
+                        </h3>
+                        <p>
+                            February 27th 2026 - March 1st 2026
+                        </p>
+                    </div>
                 </section>
 
                 <hr>
 
-                <section id="detailed-info">
+                <section class="detailed-info">
                     <h2>
                         Overview
                     </h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et blanditiis illum aliquid, quae quibusdam quisquam dicta veritatis, excepturi facere similique soluta harum corrupti? Distinctio, mollitia eaque quis cum ad hic consequuntur exercitationem, illo rem odit temporibus saepe omnis quibusdam commodi at consectetur. Aliquam modi nesciunt aperiam suscipit quasi. Eaque nemo necessitatibus, sit alias unde non delectus optio officiis saepe eum, nihil commodi, cumque culpa expedita iusto quidem ratione tempora maxime ab dolorum veritatis beatae error! Hic placeat fuga veniam sapiente neque, debitis iste, doloribus porro, amet optio veritatis id similique necessitatibus pariatur fugit cum dolor. Possimus sit modi consequatur sequi asperiores aliquam fugit quia, dignissimos tempora ipsam iste maxime distinctio. Dolores labore omnis dolorem nobis. Excepturi adipisci nostrum quod blanditiis facilis laudantium ullam quo quasi, similique error numquam natus nulla impedit praesentium! Voluptatum asperiores ut quos beatae consequuntur odit, nostrum fuga exercitationem, unde ea cum delectus! Facere, adipisci hic?
+                        In this game, the player takes the perspective of a ghost detective who's trying to reach a light node in several different levels. In these levels, the player is expected to move and see the world through trial and error and the ghost's monocle, who links to the nearest beacon of light to the player, exposing a minor part of the level to them at a time.
                     </p>
 
                     <h2>
                         My Contributions
                     </h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore doloribus molestiae reprehenderit? Aliquam necessitatibus odio eius animi suscipit. Eos aliquam adipisci facere in earum? Nihil consectetur nulla commodi eius voluptate maiores debitis. Fuga ad quos unde aut eveniet magni hic, nemo vero, optio odit quod molestiae deleniti. Culpa nesciunt earum maiores ad iste soluta odio dignissimos repellendus dolorum dolor, odit non dolore nemo, incidunt unde. Tempora dolore vero cum sequi quaerat aliquam quibusdam magnam similique, dicta ad voluptatum itaque aperiam accusamus deleniti suscipit soluta ipsa voluptatem doloribus eos nisi eum amet sit rerum! Dolore voluptatum delectus cum cumque labore temporibus ipsam maiores nihil veniam distinctio vel earum, ullam aspernatur consequuntur consectetur saepe modi maxime, totam vero, hic magni architecto. Dicta eveniet eius odio inventore quasi! Debitis eveniet tempore eius eum aut nemo doloribus quis ut! Facere placeat soluta repudiandae et vitae odio veniam porro enim nemo cupiditate temporibus, quidem ipsa.
-                    </p>
+                    <ul>
+                        <li>
+                            Designed levels around different gameplay objectives, establishing a more structured approach to level development
+                        </li>
+                        <li>
+                            Defined the intended purpose of each level to support the introduction and continuation of the game's mechanics
+                        </li>
+                        <li>
+                            Developed the game's UI, creating responsive interactions by using accompanying sound effects
+                        </li>
+                        <li>
+                            Created and integrated custom footstep sound effects to further make the player feel immersed in the game's themes
+                        </li>
+                    </ul>
 
                     <h2>
                         Technical Highlights
                     </h2>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere labore laboriosam ipsa nobis exercitationem dignissimos cupiditate, dolorum ipsam fugiat nesciunt. Perferendis dolorum inventore saepe libero consequatur, facilis minus amet, veritatis possimus maxime sunt modi nisi molestias ipsam nam quam temporibus blanditiis, optio quasi illum dolor reprehenderit cupiditate beatae distinctio? Voluptate repudiandae quia officia reprehenderit adipisci dolore atque vitae ex rerum odio, nobis deserunt, impedit iste facilis, ea ab unde dignissimos nulla veniam! Totam esse adipisci nemo suscipit corporis ad nobis! Exercitationem corrupti veritatis, est odio eum adipisci quaerat necessitatibus sapiente non, nemo accusamus impedit? Eum tenetur quaerat aliquid sapiente facere!
-                    </p>
+                    <ul>
+                        <li>
+                            Linked player movement with the looping of playing an audio file using a linked audio player to the scene of any level
+                        </li>
+                        <li>
+                            Integrated Godot's Control node system to implement a working UI system, using signals to play certain sound effects given different audio players attached to a given scene
+                        </li>
+                    </ul>
 
                     <h2>
                         Project Outcome(s)
                     </h2>
                     <ul>
-                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, voluptatibus.</li>
-                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, voluptatibus.</li>
-                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, voluptatibus.</li>
+                        <li>Was awarded best art direction in RIT's Game Development Club Spring 2026 GameJam</li>
+                        <li>Learned more about other approaches to level design, further implimenting it in future projects to ensure a smooth and comfortable experience for the player</li>
                     </ul>
 
                     <h2>
                         Images
                     </h2>
-                    <img src="src/placeholder-tv-image.png" alt="something something first image">
-                    <img src="src/placeholder-tv-image.png" alt="something something first image">
-                    <img src="src/placeholder-tv-image.png" alt="something something first image">
+                    <div class="gameplay-images">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                    </div>
+                </section>
+            </details>
+        </div>
+
+        <div class="project-entry">
+            <details>
+                <summary>
+                    <img src="media/prime-directive-thumbnail.png" alt="Thumbnail for Prime Directive">
+                    <strong>Post Casket Investigation</strong>
+                    <h3>Defend your creator's lab from the forces of good in this top-down, robot, wave, survival shooter.</h3>
+                </summary>
+
+                <section class="in-a-nutshell-info">
+                    <div>
+                        <h3>
+                            Role(s)
+                        </h3>
+                        <p>
+                            Project Manager, Narrative Designer
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Tools Used
+                        </h3>
+                        <p>
+                            Godot - GDScript
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Team Size
+                        </h3>
+                        <p>
+                            4 Developers
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Production Period
+                        </h3>
+                        <p>
+                            January 17th 2025 - January 31st 2025
+                        </p>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section class="detailed-info">
+                    <h2>
+                        Overview
+                    </h2>
+                    <p>
+                        The player is a robot who's one goal to accomplish to defend a world-renowned artist and scientist while being swarmed by robots sent by the United Nations who were sent to shut down the scientist's plots. Throughout the game, the player can choose different types of weapons that have different behaviors while upgrading themselves, exploring different parts of the lab, and fighting of several different types of enemy robots.
+                    </p>
+
+                    <h2>
+                        My Contributions
+                    </h2>
+                    <ul>
+                        <li>
+                            Coordinated the team's workflow and development priorities to ensure the GameJam's deadline, releasing seven hours ahead of schedule as a result.
+                        </li>
+                        <li>
+                            Wrote the game's dialogue and established the foundaiton of it's narrative
+                        </li>
+                        <li>
+                            Established creative direction for the voice performances, providing assistance to the voice actors towards the intended tone of the game
+                        </li>
+                    </ul>
+
+                    <h2>
+                        Project Outcome(s)
+                    </h2>
+                    <ul>
+                        <li>Released my first game, gaining practicial experience in game design, collaborative develop, and delivering projects under deadlines</li>
+                        <li>Led my first dedicated team, gaining hands-on experience coordinating teams and managing a game developmne tproject from production through release</li>
+                    </ul>
+
+                    <h2>
+                        Images
+                    </h2>
+                    <div class="gameplay-images">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                        <img src="src/placeholder-tv-image.png" alt="something something first image">
+                    </div>
                 </section>
             </details>
         </div>
