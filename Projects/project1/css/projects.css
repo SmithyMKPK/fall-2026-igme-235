@@ -78,26 +78,26 @@ summary img, summary strong {
     text-align: center;
 }
 
-.project-link a:link {
+.project-link:link {
     color: #E0F2FF;
     text-decoration: none;
 }
 
-.project-link a:visited {
+.project-link:visited {
     color: #B8CBEF;
 }
 
-.project-link a:hover {
+.project-link:hover {
     color: #66D9FF;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
-.project-link a:active {
+.project-link:active {
     color: #00BFFF;
 }
 
-.project-link a:focus-visible {
+.project-link:focus-visible {
     outline: 2px solid #66D9FF;
     outline-offset: 4px;
     border-radius: 2px;
