@@ -78,6 +78,31 @@ summary img, summary strong {
     text-align: center;
 }
 
+.project-link a:link {
+    color: #E0F2FF;
+    text-decoration: none;
+}
+
+.project-link a:visited {
+    color: #B8CBEF;
+}
+
+.project-link a:hover {
+    color: #66D9FF;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.project-link a:active {
+    color: #00BFFF;
+}
+
+.project-link a:focus-visible {
+    outline: 2px solid #66D9FF;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 @media (max-width: 600px) {
     main {
         grid-template-columns: 1fr;
