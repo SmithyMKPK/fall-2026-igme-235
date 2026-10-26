@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DOM-3</title>
+	<style>
+		body{border:1px solid gray;}
+		p b{transform: rotate(20deg)}
+	</style>
+</head>
+<body>
+<h1>My Page</h1>
+<h2>Info</h2>
+<h2>Pictures</h2>
+<h2>More Info</h2>
+<p>Blah <b>Blah</b> Blah</p>
+<p>Blah <b>Blah</b> Blah</p>
+<p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+<footer>Copyright &copy; <b>20XX</b></footer>
+<script>
+    "use strict"; 
+
+    let firstH1Element = document.querySelector('h1');
+    let firstParagraphElement = document.querySelector('p');
+    let allH2Elements = document.querySelectorAll('h2');
+    let allParagraphs = document.querySelectorAll('p');
+    let documentBody = document.body;
+    let currentYear = new Date().getFullYear();
+
+    firstH1Element.innerHTML = "My UFO Page";
+    allH2Elements[0].innerHTML = "My UFO Info";
+    allH2Elements[1].innerHTML = "My UFO Pictures";
+    allH2Elements[2].innerHTML = "";
+
+    documentBody.style.fontFamily = "sans-serif";
+    documentBody.style.color = "#C44240";
+    
+    firstParagraphElement.innerHTML = 'Report your UFO sightings here: <a href="https://nuforc.org/" target="_blank">http://www.nuforc.org/</a>';
+    firstParagraphElement.style.color = "Green";
+    firstParagraphElement.style.fontWeight = "bold";
+    firstParagraphElement.style.fontSize = "2em";
+    firstParagraphElement.style.textTransform = "uppercase";
+    firstParagraphElement.style.textShadow = "3px 2px #A44";
+
+    allParagraphs[1].innerHTML = "";
+    allParagraphs[2].innerHTML = '<img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2026-05/260508-uap-ufo-mn-0940-d15300.gif" alt="a UFO sighting">';
+
+    document.querySelector('footer').innerHTML = "Copyright © " + new Date().getFullYear() + " Adon Smith Griffin";
+</script>
+</body>
+</html>
