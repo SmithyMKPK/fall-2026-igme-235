@@ -41,18 +41,33 @@
 <script>
 let radioButtons = document.querySelectorAll('input');
 let submitButton = document.getElementById('colorButton');
-let activeRadioButton;
+let infoSection = document.getElementById('info');
+let legend = document.querySelector('legend');
 
-function changeLegendColor(){
-    return;
+function onSubmitButtonPressed(){
+    for (let i = 0; i < radioButtons.length; i++){
+    if (radioButtons[i].checked){
+		legend.style.color = radioButtons[i].value;
+		changeColorText(radioButtons[i].value, true);
+	}
+	}
 }
 
-submitButton.addEventListener("click", () => changeLegendColor());
+function changeColorText(color, isFinalText = false){
+	if (isFinalText === true){
+		infoSection.textContent = "Your FINAL CHOICE is " + "\"" + color + "\"!";
+	}
+	else{
+		infoSection.textContent = "You have selected \"" + color + "\"!"
+	}
+}
+
+submitButton.addEventListener('click', () => onSubmitButtonPressed());
 
 
-for (let i = 0; i < radioButtons; i++){
+for (let i = 0; i < radioButtons.length; i++){
     let currentButton = radioButtons[i];
-    currentButton.addEventListener(("change", () => activeRadioButton = currentButton));
+    currentButton.addEventListener('change', () => changeColorText(currentButton.value));
 }
 
 </script>
