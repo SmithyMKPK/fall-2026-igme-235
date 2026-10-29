@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/random-phrases.css">
+        <title>ASG Random Phrases</title>
+    </head>
+
+    <body>
+        <main>
+            <h1 id="title">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, dolor.
+            </h1>
+
+            <p id="quote">
+                
+            </p>
+
+            <button>Reaudit</button>
+
+            <footer id="copyright-and-name">
+                Lorem ipsum dolor sit.
+            </footer>
+
+            <img src="media/spreadsheet.jpg" alt="placeholder">
+
+
+            <script>
+                let quotes = ["I asked my dad if he knew any formulas in excep. He said \"Yeah, sum.\"", 
+                "What do you call an accountant with an opinion? An auditor.", 
+                "I could tell you a joke about debits, but only if you give me credit", 
+                "Where do accountants buy their clothes? The GAAP.", 
+                "What do partnerships and ghosts have in common? They’re both pass-through entities"];
+                let quoteElement = document.getElementById('quote');
+                let rerollButton = document.querySelector('button');
+
+                function setRandomQuote(){
+                    let randomIndex = Math.floor(Math.random() * quotes.length);
+                    let randomQuote = quotes[randomIndex];
+                
+                    quoteElement.textContent = randomQuote;
+                }
+
+                setRandomQuote();
+
+                rerollButton.addEventListener('click', () => setRandomQuote());
+
+                document.querySelector('footer').textContent = "Copyright " + new Date().getFullYear() + " Adon Smith Griffin";
+
+            </script>
+        </main>
+    </body>
+    </html>
