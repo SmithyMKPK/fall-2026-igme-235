@@ -10,7 +10,7 @@
     <body>
         <main>
             <h1 id="title">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, dolor.
+            The Accountant's Day-shift
             </h1>
 
             <p id="quote">
@@ -35,16 +35,16 @@
                 let quoteElement = document.getElementById('quote');
                 let rerollButton = document.querySelector('button');
 
-                function setRandomQuote(){
+                function displayQuote(){
                     let randomIndex = Math.floor(Math.random() * quotes.length);
                     let randomQuote = quotes[randomIndex];
                 
                     quoteElement.textContent = randomQuote;
                 }
 
-                setRandomQuote();
+                displayQuote();
 
-                rerollButton.addEventListener('click', () => setRandomQuote());
+                rerollButton.addEventListener('click', () => displayQuote());
 
                 document.querySelector('footer').textContent = "Copyright " + new Date().getFullYear() + " Adon Smith Griffin";
 
