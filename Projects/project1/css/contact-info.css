@@ -1,0 +1,26 @@
+main {
+    padding: 10vw;
+}
+
+a:link {
+    color: #a8dafe;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #B8CBEF;
+}
+
+a:hover {
+    color: #749ba7;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+a:active {
+    color: #00BFFF;
+}
+
+p{
+    font-size: 15px;
+}
