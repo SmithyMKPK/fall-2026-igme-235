@@ -8,7 +8,7 @@ let displayTerm = "";
 function searchButtonClicked(){
 	const GIPHY_URL = "https://api.giphy.com/v1/gifs/search?";
 
-    let GIPHY_KEY = "5PuWjWVnwpHUQPZK866vd7wQ2qeCeqg7";
+    let GIPHY_KEY = "60kXwQ3oET0iVBXpwPdrktJhvCiq6hvP";
 	let url = GIPHY_URL;
     url += "api_key=" + GIPHY_KEY;
 
