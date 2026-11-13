@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/prototype.js" defer></script>
+    <link rel="stylesheet" href="css/prototype.css">
+    <title>ASG Project 2 Prototype</title>
+</head>
+
+<body>
+    <header>  
+        <h1>
+            Morty's Encylopedia
+        </h1>
+    </header>
+    
+    <main>
+        <label for="sort-select">Sort characters by...</label>
+        <select name="sort-aspects" id="sort-select">
+            <option value=0>Select</option>
+            <option value=1>Species</option>
+            <option value=2>Gender</option>
+            <option value=3>Name (A-Z)</option>
+            <option value=4>Name (Z-A)</option>
+            <option value=5>Status (Alive)</option>
+            <option value=6>Status (Dead)</option>
+        </select>
+
+        <label for="search-select">Search characters by...</label>
+        <select name="search-aspects" id="search-select">
+            <option value=0>Select</option>
+            <option value=1>Name</option>
+            <option value=2>Episode</option>
+        </select>
+        <input id="search-text" type="text">
+
+        <div id="small-entry-container">
+            
+        </div>
+
+        <div id="big-entry-container">
+
+        </div>
+    </main>
+</body>
+</html>

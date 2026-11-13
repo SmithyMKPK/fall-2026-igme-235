@@ -1,0 +1,19 @@
+#small-entry-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.small-id-entry {
+    flex: 0 0 150px;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.small-id-entry img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
