@@ -133,7 +133,7 @@ async function fetchAPI(urlEndpoint = ""){
     const BaseApiUrl = "https://rickandmortyapi.com/api";
 
     // Ternary if-statement to check whether or not the base API URL is even needed
-    let url = urlEndpoint.startsWith("http") ? urlEndpoint : BaseApiUrl + urlEndpoint;;
+    let url = urlEndpoint.startsWith("http") ? urlEndpoint : BaseApiUrl + urlEndpoint;
 
     const response = await fetch(url);
 
