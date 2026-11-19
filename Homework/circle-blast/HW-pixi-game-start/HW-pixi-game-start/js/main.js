@@ -11,7 +11,7 @@ let assets;
 
 // game variables
 let startScene;
-let gameScene, ship, scoreLabel, lifeLabel, shootSound, hitSound, fireballSound;
+let gameScene, ship, scoreLabel, lifeLabel, gameOverScoreLabel, shootSound, hitSound, fireballSound;
 let gameOverScene;
 
 let circles = [];
@@ -74,10 +74,23 @@ async function setup() {
   gameScene.addChild(ship);
 
   // #6 - Load Sounds
+  shootSound = new Howl({
+    src: ["sounds/shoot.wav"],
+  });
+
+  hitSound = new Howl({
+    src: ["sounds/hit.mp3"],
+  });
+
+  fireballSound = new Howl({
+    src: ["sounds/fireball.mp3"],
+  });
 
   // #7 - Load sprite sheet
+  explosionTextures = loadSpriteSheet();
 
   // #8 - Start update loop
+  app.ticker.add(gameLoop);
 
   // #9 - Start listening for click events on the canvas
 
@@ -171,6 +184,20 @@ function createLabelsAndButtons(){
     gameOverText.y = sceneHeight / 2 - 160;
     gameOverScene.addChild(gameOverText);
 
+    // 3B - make final score label text
+    let gameOverScoreText = new PIXI.Text({
+        text: `Your final score: ${score}`,
+        style: {
+            fill: 0xffffff,
+            fontSize: 32,
+            fontFamily: "Futura",
+            stroke: { color: 0xff0000, width: 6 },
+        },
+    });
+    gameOverScoreText.x = sceneWidth / 2 - gameOverScoreText.width / 2;
+    gameOverScoreText.y = sceneHeight / 2;
+    gameOverScene.addChild(gameOverScoreText);
+
     // 3B - make "play again?" button
     let playAgainButton = new PIXI.Text({ text: "Play Again?", style: buttonStyle });
     playAgainButton.x = sceneWidth / 2 - playAgainButton.width / 2;
@@ -184,9 +211,24 @@ function createLabelsAndButtons(){
 }
 
 function startGame(){
+    console.log("startGame called");
     startScene.visible = false;
     gameOverScene.visible = false;
     gameScene.visible = true;
+    // Pixi v8: canvas is exposed as `app.canvas` (not `app.view`).
+    app.canvas.onclick = fireBullet;
+    levelNum = 1;
+    score = 0;
+    life = 100;
+    increaseScoreBy(0);
+    decreaseLifeBy(0);
+    ship.x = 300;
+    ship.y = 550;
+    loadLevel();
+    // Unpause the game - allows gameLoop and events to be active
+    setTimeout(() => {
+        paused = false;
+    }, 50);
 }
 
 function increaseScoreBy(value){
@@ -198,4 +240,190 @@ function decreaseLifeBy(value) {
     life -= value;
     life = parseInt(life);
     lifeLabel.text = `Life: ${life}%`;
+}
+
+function gameLoop(){
+  if (paused) return;
+
+  // #1 - Calculate "delta time"
+  let dt = 1 / app.ticker.FPS;
+  if (dt > 1 / 12) dt = 1 / 12;
+
+  // #2 - Move Ship
+  let mousePosition = app.renderer.events.pointer.global;
+  // ship.position = mousePosition;
+
+  let amt = 6 * dt; // at 60 FPS would move about 10% of distance per update
+  // lerp (linear interpolate) the x & y values with lerp()
+  let newX = lerp(ship.x, mousePosition.x, amt);
+  let newY = lerp(ship.y, mousePosition.y, amt);
+
+  // keep the ship on the screen with clamp()
+  let w2 = ship.width / 2;
+  let h2 = ship.height / 2;
+  ship.x = clamp(newX, 0 + w2, sceneWidth - w2);
+  ship.y = clamp(newY, 0 + h2, sceneHeight - h2);
+
+
+  // #3 - Move Circles
+  for (let c of circles) {
+    c.move(dt);
+    if (c.x < c.radius || c.x > sceneWidth - c.radius) {
+        c.reflectX();
+        c.move(dt);
+    }
+    if (c.y < c.radius || c.y > sceneHeight - c.radius) {
+        c.reflectY();
+        c.move(dt);
+    }
+  }
+
+  // #4 - Move Bullets
+  for (let b of bullets) {
+    b.move(dt);
+  }
+
+  // #5 - Check for Collisions
+  for (let c of circles) {
+    // #5a - circles & bullets
+    for (let b of bullets) {
+        if (rectsIntersect(c, b)) {
+            fireballSound.play();
+            createExplosion(c.x, c.y, 64, 64); // we will implement this soon
+            gameScene.removeChild(c);
+            c.isAlive = false;
+            gameScene.removeChild(b);
+            b.isAlive = false;
+            increaseScoreBy(1);
+            break;
+        } 
+    }
+
+    // #5B - circles & ship
+    if (c.isAlive && rectsIntersect(c, ship)) {
+        hitSound.play();
+        gameScene.removeChild(c);
+        c.isAlive = false;
+        decreaseLifeBy(20);
+    }
+  }
+
+
+  // #6 - Now do some clean up
+  // #6A - Cleanup bullets
+  bullets = bullets.filter((b) => b.isAlive);
+
+  // #6B - Cleanup circles
+  circles = circles.filter((c) => c.isAlive);
+
+  // #6C - get rid of explosions
+  explosions = explosions.filter((e) => e.playing);
+
+
+  // #7 - Is game over?
+  if (life <= 0){
+    end();
+    return; // return here so we skip #8 below
+  }
+
+
+  // #8 - Load next level
+  if (circles.length == 0) {
+    levelNum++;
+    loadLevel();
+  }
+}
+
+function createCircles(numCircles = 10) {
+    for (let i = 0; i < numCircles; i++) {
+        let c = new Circle(10, 0xffff00);
+        c.x = Math.random() * (sceneWidth - 50) + 25;
+        c.y = Math.random() * (sceneHeight - 400) + 25;
+        circles.push(c);
+        gameScene.addChild(c);
+    }
+}
+
+function loadLevel(){
+  createCircles(levelNum * 5);
+
+  if (score >= 5) {
+    app.canvas.onclick = fireThreeBullet;
+    console.log(score);
+  }
+  else{
+    app.canvas.onclick = fireBullet;
+  }
+}
+
+function end() {
+    paused = true;
+
+    // Clear out level
+    circles.forEach((c) => gameScene.removeChild(c));
+    circles = [];
+
+    bullets.forEach((b) => gameScene.removeChild(b));
+    bullets = [];
+
+    explosions.forEach((e) => gameScene.removeChild(e));
+    explosions = [];
+
+    app.canvas.onclick = null; // disable the onclick event
+
+    gameOverScene.visible = true;
+    gameScene.visible = false;
+}
+
+function fireBullet() {
+    if (paused) return;
+
+    let b = new Bullet(0xffffff, ship.x, ship.y);
+    bullets.push(b);
+    gameScene.addChild(b);
+    shootSound.play();
+}
+
+function fireThreeBullet() {
+    if (paused) return;
+
+    let b1 = new Bullet(0xffffff, ship.x, ship.y);
+    let b2 = new Bullet(0xffffff, ship.x - 5, ship.y);
+    let b3 = new Bullet(0xffffff, ship.x + 5, ship.y);
+    bullets.push(b1, b2, b3);
+    gameScene.addChild(b1);
+    gameScene.addChild(b2);
+    gameScene.addChild(b3);
+    shootSound.play();
+}
+
+function loadSpriteSheet() {
+    // The `explosions.png` texture is already loaded by PIXI.Assets in loadImages().
+    // In Pixi v8 we slive sub-textures by constructing new PIXI.Texture objects that share the textureSource of the loaded sprite sheet.
+    let spriteSheet = assets.explosions;
+    let width = 64;
+    let height = 64;
+    let numFrames = 16;
+    let textures = [];
+    for (let i = 0; i < numFrames; i++) {
+        let frame = new PIXI.Texture({
+            source: spriteSheet.source,
+            frame: new PIXI.Rectangle(i * width, 64, width, height),})
+        textures.push(frame);
+    }
+    return textures;
+}
+
+function createExplosion(x, y, frameWidth, frameHeight) {
+    let w2 = frameWidth / 2;
+    let h2 = frameHeight / 2;
+    let expl = new PIXI.AnimatedSprite(explosionTextures);
+    expl.x = x - w2; // we want the cennter of the explosion at the center of the circle 
+    expl.y = y - h2; // same for height;
+    expl.animationSpeed = 1 / 7;
+    expl.loop = false;
+    expl.onComplete = () => gameScene.removeChild(expl);
+    explosions.push(expl);
+    gameScene.addChild(expl);
+    expl.play();
 }
